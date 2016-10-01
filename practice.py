@@ -153,7 +153,7 @@ def total_meal_price(meal_price, percent_tip = 15):
 # BUG WAS DUE TO TEST ONLY WANTING TO TAKE ANSWER TO THE TENS PLACE
     
     tip = (.01 * percent_tip) * meal_price
-    return round(meal_price + tip, .1)
+    return round(meal_price + tip, 1)
 
 
    
