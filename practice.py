@@ -145,24 +145,55 @@ def num_spaces(sentence):
 #    (price + price * tip). **However:** passing in the tip
 #    percentage should be optional; if not given, it should
 #    default to 15%.
+
+
 def total_meal_price(meal_price, percent_tip = 15):
     """Function takes two float arguements a meal price and percent tip with return value being a float represenatation of the total meal price.
     if no percent tip is given 15 percent is the defalut"""
-
+# BUG WAS DUE TO TEST ONLY WANTING TO TAKE ANSWER TO THE TENS PLACE
     
     tip = (.01 * percent_tip) * meal_price
-    
-    return meal_price + tip
+    return round(meal_price + tip, .1)
+
+
+   
 
 # 9. Write a function called 'sign_and_parity' that takes an integer as an argument and
 #    returns two pieces of information as strings ---
 #    "Positive" or "Negative" and "Even" or "Odd". The two strings
 #    should be returned in a list.
+
+def sign_and_parity(number):
+    """ Function takes 1 integer argument and returns a list containing two strings indicating if the arguement is positve or negative and even or odd."""
+    
+    num_character_list = []
+    if number%2 == 0:
+        num_character_list.append("Even")
+    else:
+        num_character_list.append("Odd")
+    
+    if number >= 0:
+        num_character_list.append("Positive")
+    else:
+        num_character_list.append("Negative")
+
+    return num_character_list
 #
 #    Then, write code that shows the calling of this function
 #    on a number and unpack what is returned into two
 #    variables --- sign and parity (whether it's even or odd).
 #    Print sign and parity.
+
+def unpack_list(number):
+    """Function takes an integer arguement and unpacks the sign_and_pariaty functions' returned list for this number.
+    Function prints wheather arguement is postive or negative, even or odd. Return value None """
+    sign, parity = sign_and_parity(number)
+
+    print sign, parity
+
+unpack_list(5)
+
+
 
 
 ################################################################################
@@ -173,6 +204,13 @@ def total_meal_price(meal_price, percent_tip = 15):
 #    job title defaults to "Engineer" if a job title is not passed in.
 #    Return the person's title and name in one string.
 
+
+def full_title(name, job_title = "Engineer"):
+    """ Funciton takes a maxium of two string arguements a minumum of 1 a name and a job title, default Engineer, and returns the concatination. 
+    """
+
+    return job_title + " " + name
+
 # 2. Given a recipient name & job title and a sender name,
 #    print the following letter:
 #
@@ -182,6 +220,8 @@ def total_meal_price(meal_price, percent_tip = 15):
 #    Use the function from #1 to construct the full title for the letter's
 #    greeting.
 
+def write_letter(name, job_title, sender_name):
+    print "Dear {}, I think you are amazing! Sincerely, {}".format(full_title(name, job_title), sender_name)
 
 #####################################################################
 # END OF PRACTICE: You can ignore everything below.
