@@ -26,7 +26,7 @@ def cost_w_tax(state_abv, cost, tax = .05):
     return total_cost 
 
 # Driver code for is_berry = pass
-# cost_w_tax("CA", 5.00, 6)
+# print cost_w_tax("CA", 5.00, 6)
 
 
 #####################################################################
