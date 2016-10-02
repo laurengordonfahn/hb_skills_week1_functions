@@ -14,13 +14,13 @@
 
 #    If the user does not provide a tax rate it should default to 5% 
 
-def cost_w_tax(state_abv, cost, tax = 5):
-    """ Function takes in three arguments: a string state abreviation, an integer item cost, an integer tax, with default of 5%. Return value is total cost as a float.
-    Function has a code line to substitue tax to 7% if state_abv "CA" is put in. """
+def cost_w_tax(state_abv, cost, tax = .05):
+    """ Function takes in three arguments: a string state abreviation, an integer item cost, an integer tax, with default of .05. Return value is total cost as a float.
+    Function has a code line to substitue tax to .07 if state_abv "CA" is put in. """
     state_abv = state_abv.lower()
     if state_abv == "ca":
         tax = .07
-    total_cost = round(((cost * (tax * .01)) + cost), 2)
+    total_cost = round(((cost * tax)+ cost), 2)
   
     
     return total_cost 

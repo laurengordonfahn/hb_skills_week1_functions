@@ -146,17 +146,15 @@ def num_spaces(sentence):
 #    percentage should be optional; if not given, it should
 #    default to 15%.
 
-
-def total_meal_price(meal_price, percent_tip = 15):
+ 
+def total_meal_price(meal_price, percent_tip = .15):
     """Function takes two float arguements a meal price and percent tip with return value being a float represenatation of the total meal price.
     if no percent tip is given 15 percent is the defalut"""
 # BUG WAS DUE TO TEST ONLY WANTING TO TAKE ANSWER TO THE TENS PLACE
     
-    tip = (.01 * percent_tip) * meal_price
+    tip = percent_tip * meal_price
     return round(meal_price + tip, 1)
 
-
-   
 
 # 9. Write a function called 'sign_and_parity' that takes an integer as an argument and
 #    returns two pieces of information as strings ---
